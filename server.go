@@ -1,35 +1,34 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/labstack/echo"
 )
 
-type CustomContext struct {
-	echo.Context
-}
-
-func (c *CustomContext) Foo() {
-	println("foo")
-}
-
-func (c *CustomContext) Bar() {
-	println("bar")
+type User struct {
+	Name  string `json:"name" form:"name" query:"name"`
+	Email string `json:"email" form:"email" query:"email"`
 }
 
 func main() {
 	e := echo.New()
-	e.Use(func(h echo.HandlerFunc) echo.HandlerFunc {
-		return func(c echo.Context) error {
-			cc := &CustomContext{c}
-			return h(cc)
+
+	e.POST("/users", func(c echo.Context) (err error) {
+		u := new(User)
+		if err = c.Bind(u); err != nil {
+			return
 		}
+		return c.JSON(http.StatusOK, u)
 	})
 
-	e.GET("/", func(c echo.Context) error {
-		cc := c.(*CustomContext)
-		cc.Foo()
-		cc.Bar()
-		return cc.String(200, "OK")
+	e.GET("/users", func(c echo.Context) (err error) {
+		u := User{"Me", "her"}
+		// if err = c.Bind(u); err != nil {
+		// 	return
+		// }
+		return c.JSON(http.StatusOK, u)
 	})
+
 	e.Logger.Fatal(e.Start(":8000"))
 }
