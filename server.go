@@ -13,7 +13,7 @@ func main() {
 
 	e.Static("/", "public")
 
-	e.GET("/caesarCipher", ciphers.CaesarHandler)
+	e.GET("/caesarCipher/:command", ciphers.CaesarHandler)
 
 	e.Logger.Fatal(e.Start(":8000"))
 }
