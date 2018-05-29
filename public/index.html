@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Sweet ¢®¥ÞƮø Suite</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <header>Sweet ¢®¥ÞƮø Suite</header>
+  <section>
+    <h1>Ceasar Cipher</h1>
+    <div class="encrypt">
+      <label>Plaintext Message
+        <input type="text" id="caesar-cipher-encrypt-message" placeholder="Enter a plaintext string.">
+      </label>
+      <label>Shift
+        <input type="text" id="caesar-cipher-encrypt-shift" placeholder="Enter a positive integer.">
+      </label>
+      <button id="caesar-cipher-encrypt-button">Encrypt</button>
+    </div>
+  </section>
+  <script>
+    window.onload = () => {
+      document.getElementById("caesar-cipher-encrypt-button").onclick = async () => {
+        const response = await axios.get('/caesarCipher', {
+          params: {
+            message: document.getElementById("caesar-cipher-encrypt-message").value,
+            shift: document.getElementById("caesar-cipher-encrypt-shift").value
+          }
+        })
+        console.log(response.data);
+      }
+    }
+  </script>
+</body>
+
+</html>
