@@ -2,10 +2,47 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+button {
   font-family: "Inconsolata", monospace;
+}
+
+header {
+  font-size: 24pt;
+  text-align: center;
+}
+
+h1 {
+  background: #eee;
+  border-radius: 5px;
+  font-size: 16pt;
+  padding: 5px;
+  text-align: center;
 }
 
 label textarea {
   vertical-align: middle;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+}
+
+.row *:not(:first-child) {
+  margin-left: 20px;
+}
+
+.result {
+  background: rgb(208, 255, 137);
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+button {
+  background: rgb(44, 44, 44);
+  border: 0px;
+  border-radius: 4px;
+  color: white;
+  padding: 5px 15px;
 }
