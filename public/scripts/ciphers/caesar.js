@@ -7,7 +7,7 @@ const caesarCipherEncryptHandler = data => {
 };
 
 const caesarCipherEncrypt = async () => {
-  return await axios.get("/api/v1/caesarCipher/encrypt", {
+  return await axios.get("/api/v1/caesarCipher", {
     params: {
       plaintext: document.getElementById("caesar-cipher-encrypt-plaintext")
         .value,

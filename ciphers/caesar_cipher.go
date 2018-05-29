@@ -10,20 +10,16 @@ import (
 
 // CaesarHandler handles requests for a Caesar Cipher
 func CaesarHandler(c echo.Context) error {
-	var result interface{}
-	switch c.Param("command") {
-	case "encrypt":
-		plaintext := c.QueryParam("plaintext")
-		shift, error := strconv.Atoi(c.QueryParam("shift"))
-		if error != nil {
-			fmt.Println("Caesar Cipher", error)
-		}
-		ciphertext := caesarEncrypt(plaintext, shift)
-		result = struct {
-			Ciphertext string
-		}{
-			Ciphertext: ciphertext,
-		}
+	plaintext := c.QueryParam("plaintext")
+	shift, error := strconv.Atoi(c.QueryParam("shift"))
+	if error != nil {
+		fmt.Println("Caesar Cipher", error)
+	}
+	ciphertext := caesarEncrypt(plaintext, shift)
+	result := struct {
+		Ciphertext string
+	}{
+		Ciphertext: ciphertext,
 	}
 	return c.JSON(http.StatusOK, result)
 }
