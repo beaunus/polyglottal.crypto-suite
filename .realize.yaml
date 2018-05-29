@@ -5,7 +5,9 @@ settings:
 schema:
 - name: polyglottal.crypto-suite
   path: .
-  commands: {}
+  commands:
+    run:
+      status: true
   watcher:
     extensions:
     - go
@@ -15,3 +17,4 @@ schema:
     - .git
     - .realize
     - vendor
+    
