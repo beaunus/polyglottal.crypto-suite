@@ -10,6 +10,9 @@ button {
 header {
   font-size: 24pt;
   text-align: center;
+  border-radius: 70px;
+  border-bottom: solid rgb(204, 204, 204) 2px;
+  padding-bottom: 10px;
 }
 
 h1 {
