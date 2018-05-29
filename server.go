@@ -14,12 +14,12 @@ func main() {
 	e.Static("/", "public")
 
 	e.GET("/caesarCipher", func(c echo.Context) error {
-		message := c.QueryParam("message")
+		plaintext := c.QueryParam("plaintext")
 		shift, error := strconv.Atoi(c.QueryParam("shift"))
 		if error != nil {
 			fmt.Println("Caesar Cipher", error)
 		}
-		result := caesarEncrypt(message, shift)
+		result := caesarEncrypt(plaintext, shift)
 		return c.JSON(http.StatusOK, result)
 	})
 

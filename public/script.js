@@ -14,7 +14,8 @@ window.onload = () => {
   ).onclick = async () => {
     const response = await axios.get("/caesarCipher", {
       params: {
-        message: document.getElementById("caesar-cipher-encrypt-message").value,
+        plaintext: document.getElementById("caesar-cipher-encrypt-plaintext")
+          .value,
         shift: document.getElementById("caesar-cipher-encrypt-shift").value
       }
     });
