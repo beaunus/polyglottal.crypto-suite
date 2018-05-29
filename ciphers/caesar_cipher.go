@@ -15,7 +15,7 @@ func CaesarHandler(c echo.Context) error {
 	if error != nil {
 		fmt.Println("Caesar", error)
 	}
-	ciphertext := caesarEncrypt(plaintext, shift)
+	ciphertext := CaesarEncrypt(plaintext, shift)
 	result := struct {
 		Ciphertext string
 	}{
@@ -24,9 +24,9 @@ func CaesarHandler(c echo.Context) error {
 	return c.JSON(http.StatusOK, result)
 }
 
-// caesarEncrypt is alphabet agnostic.
+// CaesarEncrypt is alphabet agnostic.
 // TODO: determine alphabet from input
-func caesarEncrypt(plaintext string, shift int) string {
+func CaesarEncrypt(plaintext string, shift int) string {
 	runes := []rune(plaintext)
 	for i := range runes {
 		runes[i] += int32(shift)
