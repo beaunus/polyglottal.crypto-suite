@@ -11,7 +11,7 @@ import (
 func main() {
 	e := echo.New()
 
-	e.File("/", "public/index.html")
+	e.Static("/", "public")
 
 	e.GET("/caesarCipher", func(c echo.Context) error {
 		message := c.QueryParam("message")
