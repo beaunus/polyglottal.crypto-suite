@@ -7,8 +7,8 @@
 
 <body>
   <header>Sweet ¢®¥ÞƮø Suite</header>
-  <section>
-    <h1>Ceasar Cipher</h1>
+  <section id="caesar-cipher">
+    <h1>Caesar Cipher</h1>
     <div class="encrypt">
       <label>Plaintext Message
         <input type="text" id="caesar-cipher-encrypt-message" placeholder="Enter a plaintext string.">
@@ -17,9 +17,18 @@
         <input type="text" id="caesar-cipher-encrypt-shift" placeholder="Enter a positive integer.">
       </label>
       <button id="caesar-cipher-encrypt-button">Encrypt</button>
+      <div class="result" />
     </div>
   </section>
   <script>
+    const showResult = (data, handler) => {
+      handler(data);
+    }
+    const caesarCipherEncryptHandler = (data) => {
+      const element = document.getElementById("caesar-cipher")
+        .getElementsByClassName("encrypt")[0].getElementsByClassName("result")[0]
+      element.innerText = data
+    }
     window.onload = () => {
       document.getElementById("caesar-cipher-encrypt-button").onclick = async () => {
         const response = await axios.get('/caesarCipher', {
@@ -28,7 +37,7 @@
             shift: document.getElementById("caesar-cipher-encrypt-shift").value
           }
         })
-        console.log(response.data);
+        showResult(response.data, caesarCipherEncryptHandler)
       }
     }
   </script>

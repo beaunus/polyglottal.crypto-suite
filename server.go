@@ -30,7 +30,7 @@ func main() {
 // TODO: determine alphabet from input
 func caesarEncrypt(plaintext string, shift int) string {
 	runes := []rune(plaintext)
-	for i, _ := range runes {
+	for i := range runes {
 		runes[i] += int32(shift)
 	}
 	return string(runes)
