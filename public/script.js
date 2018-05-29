@@ -6,7 +6,7 @@ const caesarCipherEncryptHandler = data => {
     .getElementById("caesar-cipher")
     .getElementsByClassName("encrypt")[0]
     .getElementsByClassName("result")[0];
-  element.innerText = data;
+  element.innerText = data.Ciphertext;
 };
 window.onload = () => {
   document.getElementById(

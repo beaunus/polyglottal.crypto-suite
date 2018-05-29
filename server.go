@@ -22,7 +22,12 @@ func main() {
 		if error != nil {
 			fmt.Println("Caesar Cipher", error)
 		}
-		result := caesarEncrypt(plaintext, shift)
+		ciphertext := caesarEncrypt(plaintext, shift)
+		result := struct {
+			Ciphertext string
+		}{
+			Ciphertext: ciphertext,
+		}
 		return c.JSON(http.StatusOK, result)
 	})
 
