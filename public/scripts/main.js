@@ -4,10 +4,8 @@ const showResult = (data, handler) => {
   handler(data);
 };
 window.onload = () => {
-  document.getElementById(
-    "caesar-cipher-encrypt-button"
-  ).onclick = async () => {
-    const response = await caesarCipherEncrypt();
-    showResult(response.data, caesarCipherEncryptHandler);
+  document.getElementById("caesar-encrypt-button").onclick = async () => {
+    const response = await caesarEncrypt();
+    showResult(response.data, caesarEncryptHandler);
   };
 };

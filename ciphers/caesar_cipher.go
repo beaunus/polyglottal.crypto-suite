@@ -13,7 +13,7 @@ func CaesarHandler(c echo.Context) error {
 	plaintext := c.QueryParam("plaintext")
 	shift, error := strconv.Atoi(c.QueryParam("shift"))
 	if error != nil {
-		fmt.Println("Caesar Cipher", error)
+		fmt.Println("Caesar", error)
 	}
 	ciphertext := caesarEncrypt(plaintext, shift)
 	result := struct {

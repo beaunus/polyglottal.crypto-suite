@@ -1,17 +1,16 @@
-const caesarCipherEncryptHandler = data => {
+const caesarEncryptHandler = data => {
   const element = document
-    .getElementById("caesar-cipher")
+    .getElementById("caesar")
     .getElementsByClassName("encrypt")[0]
     .getElementsByClassName("result")[0];
   element.innerText = data.Ciphertext;
 };
 
-const caesarCipherEncrypt = async () => {
-  return await axios.get("/api/v1/caesarCipher", {
+const caesarEncrypt = async () => {
+  return await axios.get("/api/v1/caesar", {
     params: {
-      plaintext: document.getElementById("caesar-cipher-encrypt-plaintext")
-        .value,
-      shift: document.getElementById("caesar-cipher-encrypt-shift").value
+      plaintext: document.getElementById("caesar-encrypt-plaintext").value,
+      shift: document.getElementById("caesar-encrypt-shift").value
     }
   });
 };
