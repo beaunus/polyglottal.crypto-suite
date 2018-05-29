@@ -5,3 +5,7 @@
 html {
   font-family: "Inconsolata", monospace;
 }
+
+label textarea {
+  vertical-align: middle;
+}
