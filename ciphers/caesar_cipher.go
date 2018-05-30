@@ -26,8 +26,7 @@ func CaesarHandler(c echo.Context) error {
 	return c.JSON(http.StatusOK, result)
 }
 
-// CaesarEncrypt is alphabet agnostic.
-// TODO: determine alphabet from input
+// CaesarEncrypt depends on the alphabet.
 func CaesarEncrypt(plaintext, alphabet string, shift int) string {
 	for shift < 0 {
 		shift += len(alphabet)
