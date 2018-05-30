@@ -3,7 +3,7 @@ settings:
     force: false
     interval: 0s
 schema:
-- name: polyglottal.crypto-suite
+- name: pretty-sweet-crypto-suite
   path: .
   commands:
     run:
@@ -17,4 +17,3 @@ schema:
     - .git
     - .realize
     - vendor
-    
