@@ -17,3 +17,18 @@ func TestScytaleEncrypt(t *testing.T) {
 		}
 	}
 }
+func TestScytaleDecrypt(t *testing.T) {
+	cases := []struct {
+		ciphertext string
+		numSides   int
+		want       string
+	}{
+		{"IryyatbHmvaEhedLurlP", 4, "IamhurtverybadlyHELP"},
+	}
+	for _, c := range cases {
+		got := ScytaleDecrypt(c.ciphertext, c.numSides)
+		if got != c.want {
+			t.Errorf("ScytaleDecrypt(%q, %q) == %q, want %q", c.ciphertext, c.numSides, got, c.want)
+		}
+	}
+}
