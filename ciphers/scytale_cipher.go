@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"strings"
-	"unicode"
 
 	"github.com/labstack/echo"
 )
@@ -28,28 +26,20 @@ func ScytaleEncryptHandler(c echo.Context) error {
 
 // ScytaleEncrypt is alphabet agnostic.
 func ScytaleEncrypt(plaintext string, numSides int) string {
-	noSpacePlaintextRunes := []rune(strings.Map(func(r rune) rune {
-		if unicode.IsSpace(r) {
-			return -1
-		}
-		return r
-	}, plaintext))
-
-	resultLength := len(noSpacePlaintextRunes)
+	plaintextRunes := []rune(plaintext)
+	resultLength := len(plaintextRunes)
 	result := make([]rune, resultLength)
 
 	fromIndex := 0
-	for fromIndex < resultLength {
-		i := 0
-		for i < resultLength {
-			toIndex := i
-			for toIndex < resultLength && fromIndex < resultLength {
-				result[toIndex] = noSpacePlaintextRunes[fromIndex]
-				toIndex += numSides
-				fromIndex++
-			}
-			i++
+	i := 0
+	for i < resultLength {
+		toIndex := i
+		for toIndex < resultLength && fromIndex < resultLength {
+			result[toIndex] = plaintextRunes[fromIndex]
+			toIndex += numSides
+			fromIndex++
 		}
+		i++
 	}
 
 	return string(result)
