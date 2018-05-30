@@ -11,6 +11,7 @@ const caesarEncrypt = async () => {
   return await axios.get("/api/v1/caesar", {
     params: {
       plaintext: document.getElementById("caesar-encrypt-plaintext").value,
+      alphabet: document.getElementById("caesar-encrypt-alphabet").value,
       shift: document.getElementById("caesar-encrypt-shift").value
     }
   });
