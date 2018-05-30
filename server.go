@@ -13,6 +13,7 @@ func main() {
 	e.Static("/", "public")
 
 	e.GET("/api/v1/caesar", ciphers.CaesarHandler)
+	e.GET("/api/v1/scytale", ciphers.ScytaleEncryptHandler)
 
 	port := os.Getenv("PORT")
 	if port == "" {

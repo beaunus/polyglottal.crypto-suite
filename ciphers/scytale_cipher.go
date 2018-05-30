@@ -11,7 +11,7 @@ import (
 // ScytaleEncryptHandler handles requests for a Scytale Cipher
 func ScytaleEncryptHandler(c echo.Context) error {
 	plaintext := c.QueryParam("plaintext")
-	numSides, error := strconv.Atoi(c.QueryParam("shift"))
+	numSides, error := strconv.Atoi(c.QueryParam("numSides"))
 	if error != nil {
 		fmt.Println("Scytale", error)
 	}
@@ -26,5 +26,5 @@ func ScytaleEncryptHandler(c echo.Context) error {
 
 // ScytaleEncrypt is alphabet agnostic.
 func ScytaleEncrypt(plaintext string, numSides int) string {
-	return ""
+	return "Maybe"
 }
