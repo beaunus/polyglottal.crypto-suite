@@ -44,7 +44,6 @@ func CaesarEncrypt(plaintext, alphabet string, shift int) string {
 	for i, rune := range runes {
 		runeIndexInAlphabet := rune - firstRuneInAlphabet
 		shiftedIndex := (runeIndexInAlphabet + int32(shift)) % int32(len(alphabet))
-		fmt.Printf("(i, shiftedIndex) -> (%d, %d)", i, shiftedIndex)
 		runes[i] = alphabetRunes[shiftedIndex]
 	}
 	return string(runes)
