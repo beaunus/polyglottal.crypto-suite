@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Sweet ¢®¥ÞƮø Suite</title>
+  <title>pretty Sweet ¢®¥ÞƮø Suite</title>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script data-main="scripts/main" src="scripts/require.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -16,8 +16,11 @@
     <div class="cipher">
       <h1>Caesar Cipher</h1>
       <div class="row">
-        <label>Plaintext Message
-          <textarea id="caesar-encrypt-plaintext" placeholder="Plaintext string"></textarea>
+        <label>Plaintext
+          <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea>
+        </label>
+        <label>Alphabet
+          <textarea id="caesar-encrypt-alphabet" placeholder="Alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
         </label>
         <label>Shift
           <input type="text" id="caesar-encrypt-shift" placeholder="Integer">
@@ -31,7 +34,7 @@
     <div class="cipher">
       <h1>Scytale Cipher</h1>
       <div class="row">
-        <label>Plaintext Message
+        <label>Plaintext
           <textarea id="scytale-encrypt-plaintext" placeholder="Plaintext string"></textarea>
         </label>
         <label>Number of Sides

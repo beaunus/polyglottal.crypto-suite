@@ -15,6 +15,10 @@ header {
   padding-bottom: 10px;
 }
 
+header i {
+  color: rgb(184, 73, 169);
+}
+
 h1 {
   background: #eee;
   border-radius: 5px;
@@ -23,17 +27,19 @@ h1 {
   text-align: center;
 }
 
-label textarea {
+textarea {
   vertical-align: middle;
+  height: 50px;
 }
 
 .row {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .row *:not(:first-child) {
-  margin-left: 20px;
+  margin: 10px;
 }
 
 .result {
