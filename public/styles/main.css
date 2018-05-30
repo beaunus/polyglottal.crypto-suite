@@ -38,7 +38,7 @@ textarea {
   flex-wrap: wrap;
 }
 
-.row *:not(:first-child) {
+.row * {
   margin: 10px;
 }
 

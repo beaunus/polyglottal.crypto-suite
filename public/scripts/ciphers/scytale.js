@@ -20,3 +20,26 @@ document.getElementById("scytale-encrypt-button").onclick = async () => {
   const response = await scytaleEncrypt();
   showResult(response.data, scytaleEncryptHandler);
 };
+
+const scytaleDecryptHandler = data => {
+  const element = document
+    .getElementById("scytale")
+    .getElementsByClassName("cipher")[0]
+    .getElementsByClassName("row")[1]
+    .getElementsByClassName("result")[0];
+  element.innerText = data.Plaintext;
+};
+
+const scytaleDecrypt = async () => {
+  return await axios.get("/api/v1/scytale", {
+    params: {
+      ciphertext: document.getElementById("scytale-decrypt-ciphertext").value,
+      numSides: document.getElementById("scytale-decrypt-num-sides").value
+    }
+  });
+};
+
+document.getElementById("scytale-decrypt-button").onclick = async () => {
+  const response = await scytaleDecrypt();
+  showResult(response.data, scytaleDecryptHandler);
+};
