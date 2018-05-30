@@ -1,7 +1,7 @@
 {
   "name": "Sweet Crypto Suite",
   "description": "An Introduction to Cryptography",
-  "keywords": ["crypto", "cipher"],
+  "keywords": ["sweet", "crypto", "cipher"],
   "image": "heroku/go:1.10",
   "mount_dir": "src/github.com/beaunus/polyglottal.crypto-suite",
   "website": "http://github.com/beaunus/polyglottal.crypto-suite",
