@@ -1,4 +1,4 @@
-# Polyglottal.crypto-suite
+# pretty-sweet-crypto-suite
 
 ## Scripts
 
