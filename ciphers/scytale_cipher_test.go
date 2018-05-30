@@ -8,7 +8,7 @@ func TestScytaleEncrypt(t *testing.T) {
 		numSides  int
 		want      string
 	}{
-		{"I am hurt very badly HELP", 4, "IryyatbHmvaEhedLurlP"},
+		{"IamhurtverybadlyHELP", 4, "IryyatbHmvaEhedLurlP"},
 	}
 	for _, c := range cases {
 		got := ScytaleEncrypt(c.plaintext, c.numSides)
