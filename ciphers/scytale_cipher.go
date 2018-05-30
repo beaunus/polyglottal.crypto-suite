@@ -44,3 +44,24 @@ func ScytaleEncrypt(plaintext string, numSides int) string {
 
 	return string(result)
 }
+
+// ScytaleDecrypt is alphabet agnostic.
+func ScytaleDecrypt(ciphertext string, numSides int) string {
+	ciphertextRunes := []rune(ciphertext)
+	resultLength := len(ciphertextRunes)
+	result := make([]rune, resultLength)
+
+	fromIndex := 0
+	i := 0
+	for i < resultLength {
+		toIndex := i
+		for toIndex < resultLength && fromIndex < resultLength {
+			result[fromIndex] = ciphertextRunes[toIndex]
+			toIndex += numSides
+			fromIndex++
+		}
+		i++
+	}
+
+	return string(result)
+}
