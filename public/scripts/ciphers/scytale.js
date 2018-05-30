@@ -15,3 +15,8 @@ const scytaleEncrypt = async () => {
     }
   });
 };
+
+document.getElementById("scytale-encrypt-button").onclick = async () => {
+  const response = await scytaleEncrypt();
+  showResult(response.data, scytaleEncryptHandler);
+};

@@ -15,3 +15,8 @@ const caesarEncrypt = async () => {
     }
   });
 };
+
+document.getElementById("caesar-encrypt-button").onclick = async () => {
+  const response = await caesarEncrypt();
+  showResult(response.data, caesarEncryptHandler);
+};
