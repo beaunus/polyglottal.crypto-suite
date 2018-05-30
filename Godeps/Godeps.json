@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/beaunus/polyglottal.crypto-suite",
+	"ImportPath": "github.com/beaunus/pretty-sweet-crypto-suite",
 	"GoVersion": "go1.10",
 	"GodepVersion": "v80",
 	"Deps": [

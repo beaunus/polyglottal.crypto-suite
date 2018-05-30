@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/beaunus/polyglottal.crypto-suite/ciphers"
+	"github.com/beaunus/pretty-sweet-crypto-suite/ciphers"
 	"github.com/labstack/echo"
 )
 
