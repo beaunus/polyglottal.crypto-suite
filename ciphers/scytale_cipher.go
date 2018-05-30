@@ -28,7 +28,6 @@ func ScytaleEncryptHandler(c echo.Context) error {
 
 // ScytaleEncrypt is alphabet agnostic.
 func ScytaleEncrypt(plaintext string, numSides int) string {
-	fmt.Println("numSides", numSides)
 	noSpacePlaintextRunes := []rune(strings.Map(func(r rune) rune {
 		if unicode.IsSpace(r) {
 			return -1
@@ -36,20 +35,15 @@ func ScytaleEncrypt(plaintext string, numSides int) string {
 		return r
 	}, plaintext))
 
-	// Assemble the runes into their appropriate columns.
-
 	resultLength := len(noSpacePlaintextRunes)
 	result := make([]rune, resultLength)
 
 	fromIndex := 0
 	for fromIndex < resultLength {
 		i := 0
-		fmt.Println("i", i)
 		for i < resultLength {
 			toIndex := i
 			for toIndex < resultLength && fromIndex < resultLength {
-				fmt.Println("fromIndex", fromIndex)
-				fmt.Println("toIndex", toIndex)
 				result[toIndex] = noSpacePlaintextRunes[fromIndex]
 				toIndex += numSides
 				fromIndex++
