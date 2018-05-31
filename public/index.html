@@ -13,46 +13,42 @@
     <i>pretty</i> Sweet ¢®¥ÞƮø Suite</header>
   <section id="caesar">
     <!-- TODO: Create collapsible notes about cipher -->
-    <div class="cipher">
-      <h1>Caesar Cipher</h1>
-      <div class="row">
-        <label>Plaintext
-          <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea>
-        </label>
-        <label>Alphabet
-          <textarea id="caesar-encrypt-alphabet" placeholder="Alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
-        </label>
-        <label>Shift
-          <input type="text" id="caesar-encrypt-shift" class="int" placeholder="Integer">
-        </label>
-        <button id="caesar-encrypt-button">Encrypt</button>
-        <div class="result"></div>
-      </div>
+    <h1>Caesar Cipher</h1>
+    <div class="row">
+      <label>Plaintext
+        <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea>
+      </label>
+      <label>Alphabet
+        <textarea id="caesar-encrypt-alphabet" placeholder="Alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+      </label>
+      <label>Shift
+        <input type="text" id="caesar-encrypt-shift" class="int" placeholder="Integer">
+      </label>
+      <button id="caesar-encrypt-button">Encrypt</button>
+      <div class="result"></div>
     </div>
   </section>
   <section id="scytale">
-    <div class="cipher">
-      <h1>Scytale Cipher</h1>
-      <div class="row">
-        <label>Plaintext
-          <textarea id="scytale-encrypt-plaintext" placeholder="Plaintext string"></textarea>
-        </label>
-        <label>Number of Sides
-          <input type="text" id="scytale-encrypt-num-sides" class="int" placeholder="Positive integer">
-        </label>
-        <button id="scytale-encrypt-button">Encrypt</button>
-        <div class="result"></div>
-      </div>
-      <div class="row">
-        <label>Ciphertext
-          <textarea id="scytale-decrypt-ciphertext" placeholder="Ciphertext string"></textarea>
-        </label>
-        <label>Number of Sides
-          <input type="text" id="scytale-decrypt-num-sides" class="int" placeholder="Positive integer">
-        </label>
-        <button id="scytale-decrypt-button">Decrypt</button>
-        <div class="result"></div>
-      </div>
+    <h1>Scytale Cipher</h1>
+    <div class="row">
+      <label>Plaintext
+        <textarea id="scytale-encrypt-plaintext" placeholder="Plaintext string"></textarea>
+      </label>
+      <label>Number of Sides
+        <input type="text" id="scytale-encrypt-num-sides" class="int" placeholder="Positive integer">
+      </label>
+      <button id="scytale-encrypt-button">Encrypt</button>
+      <div class="result"></div>
+    </div>
+    <div class="row">
+      <label>Ciphertext
+        <textarea id="scytale-decrypt-ciphertext" placeholder="Ciphertext string"></textarea>
+      </label>
+      <label>Number of Sides
+        <input type="text" id="scytale-decrypt-num-sides" class="int" placeholder="Positive integer">
+      </label>
+      <button id="scytale-decrypt-button">Decrypt</button>
+      <div class="result"></div>
     </div>
   </section>
 </body>
