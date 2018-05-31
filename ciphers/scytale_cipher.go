@@ -37,18 +37,7 @@ func ScytaleEncrypt(plaintext string, numSides int) string {
 	plaintextRunes := []rune(plaintext)
 	resultLength := len(plaintextRunes)
 	result := make([]rune, resultLength)
-
-	fromIndex := 0
-	i := 0
-	for i < resultLength {
-		toIndex := i
-		for toIndex < resultLength && fromIndex < resultLength {
-			result[toIndex] = plaintextRunes[fromIndex]
-			toIndex += numSides
-			fromIndex++
-		}
-		i++
-	}
+	doTheSwaps(&plaintextRunes, &result, resultLength, numSides, true)
 	return string(result)
 }
 
@@ -57,17 +46,24 @@ func ScytaleDecrypt(ciphertext string, numSides int) string {
 	ciphertextRunes := []rune(ciphertext)
 	resultLength := len(ciphertextRunes)
 	result := make([]rune, resultLength)
+	doTheSwaps(&ciphertextRunes, &result, resultLength, numSides, false)
+	return string(result)
+}
 
+func doTheSwaps(source, target *[]rune, resultLength, numSides int, isEncode bool) {
 	fromIndex := 0
 	i := 0
 	for i < resultLength {
 		toIndex := i
 		for toIndex < resultLength && fromIndex < resultLength {
-			result[fromIndex] = ciphertextRunes[toIndex]
+			if isEncode {
+				(*target)[toIndex] = (*source)[fromIndex]
+			} else {
+				(*target)[fromIndex] = (*source)[toIndex]
+			}
 			toIndex += numSides
 			fromIndex++
 		}
 		i++
 	}
-	return string(result)
 }
