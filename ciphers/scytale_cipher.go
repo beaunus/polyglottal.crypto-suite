@@ -8,20 +8,29 @@ import (
 	"github.com/labstack/echo"
 )
 
-// ScytaleEncryptHandler handles requests for a Scytale Cipher
-func ScytaleEncryptHandler(c echo.Context) error {
+// ScytaleHandler handles requests for a Scytale Cipher
+func ScytaleHandler(c echo.Context) error {
 	plaintext := c.QueryParam("plaintext")
+	ciphertext := c.QueryParam("ciphertext")
 	numSides, error := strconv.Atoi(c.QueryParam("numSides"))
 	if error != nil {
 		fmt.Println("Scytale", error)
 	}
-	ciphertext := ScytaleEncrypt(plaintext, numSides)
-	result := struct {
+	type result struct {
 		Ciphertext string
-	}{
-		Ciphertext: ciphertext,
+		Plaintext  string
 	}
-	return c.JSON(http.StatusOK, result)
+	if len(plaintext) > 0 {
+		resultCiphertext := ScytaleEncrypt(plaintext, numSides)
+		return c.JSON(http.StatusOK, result{
+			Ciphertext: resultCiphertext,
+		})
+	} else {
+		resultPlaintext := ScytaleDecrypt(ciphertext, numSides)
+		return c.JSON(http.StatusOK, result{
+			Plaintext: resultPlaintext,
+		})
+	}
 }
 
 // ScytaleEncrypt is alphabet agnostic.
