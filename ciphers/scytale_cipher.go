@@ -20,17 +20,16 @@ func ScytaleHandler(c echo.Context) error {
 		Ciphertext string
 		Plaintext  string
 	}
+	var resultCiphertext, resultPlaintext string
 	if len(plaintext) > 0 {
-		resultCiphertext := ScytaleEncrypt(plaintext, numSides)
-		return c.JSON(http.StatusOK, result{
-			Ciphertext: resultCiphertext,
-		})
+		resultCiphertext = ScytaleEncrypt(plaintext, numSides)
 	} else {
-		resultPlaintext := ScytaleDecrypt(ciphertext, numSides)
-		return c.JSON(http.StatusOK, result{
-			Plaintext: resultPlaintext,
-		})
+		resultPlaintext = ScytaleDecrypt(ciphertext, numSides)
 	}
+	return c.JSON(http.StatusOK, result{
+		Ciphertext: resultCiphertext,
+		Plaintext:  resultPlaintext,
+	})
 }
 
 // ScytaleEncrypt is alphabet agnostic.
@@ -50,7 +49,6 @@ func ScytaleEncrypt(plaintext string, numSides int) string {
 		}
 		i++
 	}
-
 	return string(result)
 }
 
@@ -71,6 +69,5 @@ func ScytaleDecrypt(ciphertext string, numSides int) string {
 		}
 		i++
 	}
-
 	return string(result)
 }
