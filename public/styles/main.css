@@ -32,13 +32,13 @@ textarea {
   height: 50px;
 }
 
-.row {
+.cipher-method {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
 }
 
-.row * {
+.cipher-method * {
   margin: 10px;
 }
 
