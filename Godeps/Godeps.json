@@ -2,7 +2,15 @@
 	"ImportPath": "github.com/beaunus/pretty-sweet-crypto-suite",
 	"GoVersion": "go1.10",
 	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.6.2-2-ge0b5aba",
+			"Rev": "e0b5abaaae35242fa74372f26c24107711702a4e"
+		},
 		{
 			"ImportPath": "github.com/labstack/echo",
 			"Comment": "3.3.4-17-gd36ff72",
