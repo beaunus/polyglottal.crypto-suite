@@ -1,26 +1,25 @@
 package main
 
 import (
+	"log"
+	"net/http"
 	"os"
 
+	"github.com/gorilla/mux"
+
 	"github.com/beaunus/pretty-sweet-crypto-suite/ciphers"
-	"github.com/labstack/echo"
 )
 
 func main() {
-	e := echo.New()
-
-	e.Static("/", "public")
-
-	e.GET("/api/v1/caesar", ciphers.CaesarHandler)
-	e.GET("/api/v1/scytale", ciphers.ScytaleHandler)
+	router := mux.NewRouter()
+	router.HandleFunc("/api/v1/caesar", ciphers.CaesarHandler).Methods("GET")
+	router.HandleFunc("/api/v1/scytale", ciphers.ScytaleHandler).Methods("GET")
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		e.Logger.Fatal(e.Start("localhost:8000"))
+		log.Fatal(http.ListenAndServe("localhost:8000", router))
 	} else {
-
-		e.Logger.Fatal(e.Start(":" + port))
+		log.Fatal(http.ListenAndServe(":"+port, router))
 	}
 
 }

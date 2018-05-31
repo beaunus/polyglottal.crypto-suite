@@ -1,18 +1,22 @@
 package ciphers
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
 
-	"github.com/labstack/echo"
+	"github.com/beaunus/pretty-sweet-crypto-suite/util"
 )
 
 // ScytaleHandler handles requests for a Scytale Cipher
-func ScytaleHandler(c echo.Context) error {
-	plaintext := c.QueryParam("plaintext")
-	ciphertext := c.QueryParam("ciphertext")
-	numSides, error := strconv.Atoi(c.QueryParam("numSides"))
+func ScytaleHandler(w http.ResponseWriter, r *http.Request) {
+
+	values := r.URL.Query()
+	plaintext := util.SanitizeParameter("plaintext", &values)
+	ciphertext := util.SanitizeParameter("ciphertext", &values)
+	numSidesString := util.SanitizeParameter("numSides", &values)
+	numSides, error := strconv.Atoi(numSidesString)
 	if error != nil {
 		fmt.Println("Scytale", error)
 	}
@@ -26,7 +30,7 @@ func ScytaleHandler(c echo.Context) error {
 	} else {
 		resultPlaintext = ScytaleDecrypt(ciphertext, numSides)
 	}
-	return c.JSON(http.StatusOK, result{
+	json.NewEncoder(w).Encode(&result{
 		Ciphertext: resultCiphertext,
 		Plaintext:  resultPlaintext,
 	})

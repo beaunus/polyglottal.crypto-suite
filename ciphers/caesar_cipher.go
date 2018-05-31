@@ -1,19 +1,22 @@
 package ciphers
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
 	"strings"
 
-	"github.com/labstack/echo"
+	"github.com/beaunus/pretty-sweet-crypto-suite/util"
 )
 
 // CaesarHandler handles requests for a Caesar Cipher
-func CaesarHandler(c echo.Context) error {
-	plaintext := c.QueryParam("plaintext")
-	alphabet := c.QueryParam("alphabet")
-	shift, error := strconv.Atoi(c.QueryParam("shift"))
+func CaesarHandler(w http.ResponseWriter, r *http.Request) {
+	values := r.URL.Query()
+	plaintext := util.SanitizeParameter("plaintext", &values)
+	alphabet := util.SanitizeParameter("alphabet", &values)
+	shiftString := util.SanitizeParameter("shift", &values)
+	shift, error := strconv.Atoi(shiftString)
 	if error != nil {
 		fmt.Println("Caesar", error)
 	}
@@ -23,7 +26,7 @@ func CaesarHandler(c echo.Context) error {
 	}{
 		Ciphertext: ciphertext,
 	}
-	return c.JSON(http.StatusOK, result)
+	json.NewEncoder(w).Encode(&result)
 }
 
 // CaesarEncrypt depends on the alphabet.
