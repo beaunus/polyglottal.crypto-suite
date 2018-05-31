@@ -11,7 +11,9 @@ import (
 )
 
 func main() {
+
 	router := mux.NewRouter()
+	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./public/")))
 	router.HandleFunc("/api/v1/caesar", ciphers.CaesarHandler).Methods("GET")
 	router.HandleFunc("/api/v1/scytale", ciphers.ScytaleHandler).Methods("GET")
 
