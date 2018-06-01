@@ -19,5 +19,3 @@ go test [-bench .] ./...
 ## Contributing
 
 Thank you for your interest in this project. Feel free to make a PR if you are interested in contributing.
-
-~ beau@beaunus.com
