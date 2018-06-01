@@ -18,3 +18,9 @@ func TestCaesarEncrypt(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkCaesarEncrypt(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		CaesarEncrypt("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 3)
+	}
+}
