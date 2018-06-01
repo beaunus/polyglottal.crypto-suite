@@ -1,8 +1,7 @@
 const scytaleEncryptHandler = data => {
   const element = document
     .getElementById("scytale")
-    .getElementsByClassName("cipher")[0]
-    .getElementsByClassName("row")[0]
+    .getElementsByClassName("cipher-method")[0]
     .getElementsByClassName("result")[0];
   element.innerText = data.Ciphertext;
 };
@@ -24,8 +23,7 @@ document.getElementById("scytale-encrypt-button").onclick = async () => {
 const scytaleDecryptHandler = data => {
   const element = document
     .getElementById("scytale")
-    .getElementsByClassName("cipher")[0]
-    .getElementsByClassName("row")[1]
+    .getElementsByClassName("cipher-method")[1]
     .getElementsByClassName("result")[0];
   element.innerText = data.Plaintext;
 };

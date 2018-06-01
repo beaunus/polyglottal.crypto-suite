@@ -1,8 +1,7 @@
 const caesarEncryptHandler = data => {
   const element = document
     .getElementById("caesar")
-    .getElementsByClassName("cipher")[0]
-    .getElementsByClassName("row")[0]
+    .getElementsByClassName("cipher-method")[0]
     .getElementsByClassName("result")[0];
   element.innerText = data.Ciphertext;
 };
