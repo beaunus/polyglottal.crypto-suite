@@ -9,6 +9,9 @@ My intention is to include a vast amount of algorithms from https://en.wikipedia
 ## Scripts
 
 ```bash
+# Get dev tools together
+go get github.com/oxequa/realize
+
 # Develop the code with hot reloading
 realize start --name="server" --run
 
