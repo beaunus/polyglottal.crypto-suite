@@ -1,6 +1,6 @@
 # Pretty Sweet Crypto Suite
 
-This project was created while I was a student at Code Chrysalis.
+This project was created while I was a student at [Code Chrysalis](https://www.codechrysalis.io/).
 
 This is a project to show a variety of encryption algorithms throughout history.
 
