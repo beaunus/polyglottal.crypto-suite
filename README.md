@@ -1,4 +1,4 @@
-# pretty-sweet-crypto-suite
+# Pretty Sweet Crypto Suite
 
 This project was created while I was a student at Code Chrysalis.
 
