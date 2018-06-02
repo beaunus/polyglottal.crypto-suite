@@ -6,11 +6,16 @@ This is a project to show a variety of encryption algorithms throughout history.
 
 My intention is to include a vast amount of algorithms from https://en.wikipedia.org/wiki/History_of_cryptography.
 
+You can see this project in action at https://pretty-sweet-crypto-suite.herokuapp.com/.
+
 ## Scripts
 
 ```bash
 # Get dev tools together
 go get github.com/oxequa/realize
+
+# Get the project run tools together
+go get ./...
 
 # Develop the code with hot reloading
 realize start --name="server" --run
