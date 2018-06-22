@@ -17,6 +17,7 @@ type CipherPageData struct {
 
 type Cipher struct {
 	Title         string
+	ID            string
 	CipherMethods []CipherMethod
 }
 
@@ -26,8 +27,8 @@ type CipherMethod struct {
 }
 
 type Parameter struct {
+	DefaultValue string
 	FriendlyName string
-	TagName      string
 	Placeholder  string
 	Type         string
 }
@@ -38,21 +39,25 @@ func main() {
 	router.HandleFunc("/api/v1/caesar", ciphers.CaesarHandler).Methods("GET")
 	router.HandleFunc("/api/v1/scytale", ciphers.ScytaleHandler).Methods("GET")
 	tmpl := template.Must(template.ParseFiles("public/views/ciphers.html"))
-
 	router.HandleFunc("/ciphers", func(w http.ResponseWriter, r *http.Request) {
 		data := CipherPageData{
 			Ciphers: []Cipher{
-				{Title: "Caesar Cipher", CipherMethods: []CipherMethod{
-					{Name: "Encrypt", Parameters: []Parameter{
-						{
-							FriendlyName: "Plaintext",
-							TagName:      "plaintext",
-							Placeholder:  "Plaintext string",
-							Type:         "textarea",
+				{Title: "Caesar Cipher",
+					ID: "caesar", CipherMethods: []CipherMethod{
+						{Name: "Encrypt", Parameters: []Parameter{
+							{
+								FriendlyName: "Plaintext",
+								Placeholder:  "Characters not in the alphabet will be ignored.",
+								Type:         "textarea",
+							},
+							{
+								DefaultValue: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+								FriendlyName: "Alphabet",
+								Type:         "textarea",
+							},
+						},
 						},
 					},
-					},
-				},
 				},
 			},
 		}

@@ -12,8 +12,48 @@
   <header>
     <i>pretty</i> Sweet ¢®¥ÞƮø Suite</header>
   {{range .Ciphers}}
-  <h1>{{.Title}}</h1>
+  <section id={{.ID}}>
+    <h1>{{.Title}}</h1>
+    {{range .CipherMethods}}
+    <div class="cipher-method">
+      {{range .Parameters}}
+      <div>
+        A{{.FriendlyName}}
+      </div>
+      {{if .Placeholder}}
+      <div>
+        B{{.Placeholder}}
+      </div>
+      {{end}}
+      <div>
+        C{{.Type}}
+      </div>
+      {{end}}
+      <button id="caesar-encrypt-button">Encrypt</button>
+      <div class="result"></div>
+    </div>
+    {{end}}
+  </section>
   {{end}}
 </body>
 
 </html>
+
+<!--
+  <section id="caesar">
+    <h1>Caesar Cipher</h1>
+    <div class="cipher-method">
+      <label>Plaintext
+        <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea>
+      </label>
+      <label>Alphabet
+        <textarea id="caesar-encrypt-alphabet" placeholder="Alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+      </label>
+      <label>Shift
+        <input type="text" id="caesar-encrypt-shift" class="int" placeholder="Integer">
+      </label>
+      <button id="caesar-encrypt-button">Encrypt</button>
+      <div class="result"></div>
+    </div>
+  </section>
+-->

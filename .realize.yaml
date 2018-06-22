@@ -6,16 +6,11 @@ schema:
 - name: pretty-sweet-crypto-suite
   path: .
   commands:
-    test:
-      status: true
     run:
       status: true
   watcher:
     extensions:
     - go
-    - html
-    - js
-    - css
     paths:
     - /
     ignored_paths:
