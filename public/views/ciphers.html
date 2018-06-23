@@ -11,15 +11,16 @@
 <body>
   <header>
     <i>pretty</i> Sweet ¢®¥ÞƮø Suite</header>
-  {{range .Ciphers}}
+  {{range .Ciphers}} {{$id := .ID}}
   <section id={{.ID}}>
     <h1>{{.Title}}</h1>
-    {{range .CipherMethods}}
+    {{range .CipherMethods}} {{$name := .Name}}
     <div class="cipher-method">
       {{range .Parameters}}
-      <div>
-        A{{.FriendlyName}}
-      </div>
+      <label>
+        {{.FriendlyName}} {{if eq .Type "textarea"}} {{$id}}-{{$name}}
+        <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea> {{else if eq .Type "text"}} text {{end}}
+      </label>
       {{if .Placeholder}}
       <div>
         B{{.Placeholder}}

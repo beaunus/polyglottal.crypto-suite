@@ -55,6 +55,11 @@ func main() {
 								FriendlyName: "Alphabet",
 								Type:         "textarea",
 							},
+							{
+								FriendlyName: "Shift",
+								Placeholder:  "Integer",
+								Type:         "integer",
+							},
 						},
 						},
 					},
