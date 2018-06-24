@@ -1,56 +1,139 @@
 <html>
 
 <head>
-  <title>pretty Sweet ¢®¥ÞƮø Suite</title>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script data-main="scripts/main" src="scripts/require.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script data-main="scripts/main" src="scripts/require.js"></script>
+  <title>pretty Sweet ¢®¥ÞƮø Suite</title>
 </head>
 
 <body>
-  <header>
-    <i>pretty</i> Sweet ¢®¥ÞƮø Suite</header>
-  <section id="caesar">
-    <!-- TODO: Create collapsible notes about cipher -->
-    <h1>Caesar Cipher</h1>
-    <div class="cipher-method">
-      <label>Plaintext
-        <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea>
-      </label>
-      <label>Alphabet
-        <textarea id="caesar-encrypt-alphabet" placeholder="Alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
-      </label>
-      <label>Shift
-        <input type="text" id="caesar-encrypt-shift" class="int" placeholder="Integer">
-      </label>
-      <button id="caesar-encrypt-button">Encrypt</button>
-      <div class="result"></div>
+  <div id="viewport">
+    <header>
+      <i>pretty</i> Sweet ¢®¥ÞƮø Suite</header>
+    <div class="ciphers">
+      <div id="caesar" class="cipher">
+        <!-- TODO: Create collapsible notes about cipher -->
+        <div class="cipher-header">
+          <h1>Caesar Cipher</h1>
+          <div>
+            <p>The
+              <b>Caesar Cipher</b> is a
+              <em>substitution cipher</em> in which each letter of the message is
+              <em>shifted</em> to a corresponding letter that is some number of letters away. For example, if the letter "E"
+              were shifted to the left by 3, the result would be the letter "B".
+            </p>
+
+          </div>
+          <img src="images/Caesar_cipher_left_shift_of_3.svg">
+          <cite>
+            <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">https://en.wikipedia.org/wiki/Caesar_cipher</a>
+          </cite>
+        </div>
+        <div class="cipher-methods">
+          <div class="cipher-method">
+            <h2>Shift</h2>
+            <div class="inputs">
+              <div class="input">
+                <label>Plaintext
+                  <textarea id="caesar-encrypt-plaintext" placeholder="Characters not in the alphabet will be ignored."></textarea>
+                </label>
+              </div>
+              <div class="input">
+                <label>Alphabet
+                  <textarea id="caesar-encrypt-alphabet" placeholder="Alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+                </label>
+              </div>
+              <div class="input">
+                <label>Shift
+                  <input type="number" id="caesar-encrypt-shift" class="int" placeholder="Integer">
+                </label>
+              </div>
+            </div>
+            <div class="button">
+              <button id="caesar-encrypt-button">Shift</button>
+            </div>
+            <div class="outputs">
+              <div class="result">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="scytale" class="cipher">
+        <div class="cipher-header">
+          <h1>
+            Scytale Cipher
+          </h1>
+          <div class="strikethrough">
+            <img src="images/sky.svg">
+            <img src="images/whale-tail.svg">
+          </div>
+          <div>
+            <img src="images/skittles_logo.png">
+            <img src="images/Flag_of_Italy.svg">
+          </div>
+          <p>
+            The
+            <b>Scytale Cipher</b> is a
+            <em>transposition</em> cipher in which each letter of the message is moved to a different position in the message.
+            A
+            <b>scytale</b> is a cylindrical rod around which a piece of paper or leather is wound. The message is written across
+            the paper. When the paper is unwound, the letters of the message are transposed.
+          </p>
+          <img src="images/Skytale.png">
+          <cite>
+            <a href="https://en.wikipedia.org/wiki/Scytale" target="_blank">https://en.wikipedia.org/wiki/Scytale</a>
+          </cite>
+        </div>
+        <div class="cipher-methods">
+          <div class="cipher-method">
+            <h2>Encrypt</h2>
+            <div class="inputs">
+              <div class="input">
+                <label>Plaintext
+                  <textarea id="scytale-encrypt-plaintext" placeholder="Plaintext string"></textarea>
+                </label>
+              </div>
+              <div class="input">
+                <label>Number of Sides
+                  <input type="number" id="scytale-encrypt-num-sides" class="int" placeholder="Positive integer">
+                </label>
+              </div>
+            </div>
+            <div class="button">
+              <button id="scytale-encrypt-button">Encrypt</button>
+            </div>
+            <div class="outputs">
+              <div class="result">&nbsp;</div>
+            </div>
+          </div>
+          <div class="cipher-method">
+            <h2>Decrypt</h2>
+            <div class="inputs">
+              <div class="input">
+                <label>Ciphertext
+                  <textarea id="scytale-decrypt-ciphertext" placeholder="Ciphertext string"></textarea>
+                </label>
+              </div>
+              <div class="input">
+                <label>Number of Sides
+                  <input type="number" id="scytale-decrypt-num-sides" class="int" placeholder="Positive integer">
+                </label>
+              </div>
+            </div>
+            <div class="button">
+              <button id="scytale-decrypt-button">Decrypt</button>
+            </div>
+            <div class="outputs">
+              <div class="result">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-  <section id="scytale">
-    <h1>🇮🇹 Scytale Cipher 🇮🇹</h1>
-    <div class="cipher-method">
-      <label>Plaintext
-        <textarea id="scytale-encrypt-plaintext" placeholder="Plaintext string"></textarea>
-      </label>
-      <label>Number of Sides
-        <input type="text" id="scytale-encrypt-num-sides" class="int" placeholder="Positive integer">
-      </label>
-      <button id="scytale-encrypt-button">Encrypt</button>
-      <div class="result"></div>
-    </div>
-    <div class="cipher-method">
-      <label>Ciphertext
-        <textarea id="scytale-decrypt-ciphertext" placeholder="Ciphertext string"></textarea>
-      </label>
-      <label>Number of Sides
-        <input type="text" id="scytale-decrypt-num-sides" class="int" placeholder="Positive integer">
-      </label>
-      <button id="scytale-decrypt-button">Decrypt</button>
-      <div class="result"></div>
-    </div>
-  </section>
+  </div>
 </body>
 
 </html>

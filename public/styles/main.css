@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  border-radius: 0.25em;
 }
 
 html,
@@ -7,45 +8,168 @@ button {
   font-family: "Inconsolata", monospace;
 }
 
+html {
+  margin: 2em;
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  color: black;
+  border-bottom: solid hsl(308, 44%, 80%) 3px;
+  transition: background 0.25s ease-in-out;
+}
+
+a:hover {
+  background: hsl(308, 44%, 80%);
+}
+
+h1 {
+  background: #eee;
+  display: flex;
+  align-items: center;
+}
+
+h1 img {
+  height: 1em;
+}
+
+#viewport {
+  background: #eee;
+  padding: 0.5em;
+}
+
 header {
+  background: white;
+  padding: 0.25em;
   font-size: 28pt;
   text-align: center;
-  border-radius: 70px;
-  border-bottom: solid rgb(204, 204, 204) 2px;
-  padding-bottom: 10px;
 }
 
 header i {
   color: rgb(184, 73, 169);
 }
 
-h1 {
-  background: #eee;
-  border-radius: 5px;
-  font-size: 16pt;
-  padding: 5px;
+input,
+textarea {
+  border: 0;
+  margin-top: 0.25em;
+}
+
+.ciphers {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cipher-method {
+  border: dashed #ddd 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  font-size: 1.3em;
+  margin: 0.5em;
+  padding: 0.25em;
   text-align: center;
+}
+
+h2 {
+  background: white;
+  margin: 0;
+  /* width: 100%; */
 }
 
 textarea {
   vertical-align: middle;
-  height: 50px;
+  height: 5em;
+}
+
+p {
+  max-width: 40em;
+}
+
+.cipher-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cipher-header p {
+  margin-right: 1em;
+  margin-left: 1em;
+  text-align: justify;
+}
+
+.cipher-header div img {
+  width: 5em;
+}
+
+.cipher-header img {
+  width: 18em;
+  max-width: 90%;
+}
+
+.cipher-header img + * {
+  margin-top: 0.5em;
+}
+
+.cipher-methods {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cipher-method {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  margin: 0.5em;
+  padding: 0.25em;
 }
 
-.cipher-method * {
-  margin: 10px;
+.cipher-method > div {
+  margin: 0.25em;
+}
+
+.cipher {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em;
+}
+
+.inputs {
+  background: white;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0.5em;
+}
+
+.input {
+  background: #eee;
+  display: flex;
+  margin: 0.5em;
+  padding: 0.25em;
+  white-space: pre-line;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
 }
 
 .result {
   background: rgb(208, 255, 137);
   border-radius: 4px;
-  padding: 5px 15px;
+  /* min-height: 1.7em; */
+  padding: 0.3em 1em;
 }
 
 button {
@@ -53,9 +177,25 @@ button {
   border: 0px;
   border-radius: 4px;
   color: white;
+  font-size: 1em;
+  margin: 0;
   padding: 5px 15px;
 }
 
-.int {
-  width: 90px;
+.strikethrough {
+  position: relative;
+}
+.strikethrough:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: solid red 3px;
+
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
 }
