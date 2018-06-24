@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  border-radius: 0.25em;
 }
 
 html,
@@ -202,4 +201,13 @@ button {
   -ms-transform: rotate(-5deg);
   -o-transform: rotate(-5deg);
   transform: rotate(-5deg);
+}
+
+footer {
+  padding: 0.25em;
+  align-items: baseline;
+  margin-top: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
