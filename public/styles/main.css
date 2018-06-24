@@ -26,7 +26,7 @@ a:hover {
 
 h1 {
   display: flex;
-  background: #eee;
+  box-shadow: 0 0 0.2em #ccc;
   align-items: center;
 }
 
@@ -35,7 +35,7 @@ h1 img {
 }
 
 #viewport {
-  background: #eee;
+  /* background: #eee; */
   padding: 0.5em;
 }
 
@@ -97,6 +97,7 @@ p {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 0.5em;
 }
 
 .cipher-header p {
@@ -139,6 +140,7 @@ p {
 .cipher {
   display: flex;
   background: white;
+  box-shadow: 0 0 0.4em #ccc;
   flex-direction: column;
   margin: 0.5em;
 }
