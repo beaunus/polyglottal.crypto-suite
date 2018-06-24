@@ -1,4 +1,4 @@
-# Pretty Sweet Crypto Suite
+# <i>pretty</i> Sweet ¢®¥ÞƮø Suite
 
 This project was created while I was a student at [Code Chrysalis](https://www.codechrysalis.io/).
 
