@@ -6,8 +6,6 @@ schema:
 - name: pretty-sweet-crypto-suite
   path: .
   commands:
-    test:
-      status: true
     run:
       status: true
   watcher:
