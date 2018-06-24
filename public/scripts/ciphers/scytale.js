@@ -1,4 +1,5 @@
 const scytaleEncryptHandler = data => {
+  console.log(data);
   const element = document
     .getElementById("scytale")
     .getElementsByClassName("cipher-method")[0]
@@ -7,10 +8,13 @@ const scytaleEncryptHandler = data => {
 };
 
 const scytaleEncrypt = async () => {
+  const plaintext = document.getElementById("scytale-encrypt-plaintext").value;
+  const numSides = document.getElementById("scytale-encrypt-num-sides").value;
+  console.log(plaintext, numSides);
   return await axios.get("/api/v1/scytale", {
     params: {
-      plaintext: document.getElementById("scytale-encrypt-plaintext").value,
-      numSides: document.getElementById("scytale-encrypt-num-sides").value
+      plaintext,
+      numSides
     }
   });
 };
@@ -29,15 +33,20 @@ const scytaleDecryptHandler = data => {
 };
 
 const scytaleDecrypt = async () => {
+  const ciphertext = document.getElementById("scytale-decrypt-ciphertext")
+    .value;
+  const numSides = document.getElementById("scytale-decrypt-num-sides").value;
+  console.log(ciphertext, numSides);
   return await axios.get("/api/v1/scytale", {
     params: {
-      ciphertext: document.getElementById("scytale-decrypt-ciphertext").value,
-      numSides: document.getElementById("scytale-decrypt-num-sides").value
+      ciphertext,
+      numSides
     }
   });
 };
 
 document.getElementById("scytale-decrypt-button").onclick = async () => {
+  console.log("hello");
   const response = await scytaleDecrypt();
   showResult(response.data, scytaleDecryptHandler);
 };

@@ -53,6 +53,7 @@ header i {
 input,
 textarea {
   border: 0;
+  font-size: 1em;
   margin-top: 0.25em;
 }
 
@@ -170,6 +171,7 @@ label {
 .result {
   background: rgb(208, 255, 137);
   border-radius: 4px;
+  white-space: pre-wrap;
   /* min-height: 1.7em; */
   padding: 0.3em 1em;
 }
