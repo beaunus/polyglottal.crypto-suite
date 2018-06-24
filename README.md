@@ -14,6 +14,8 @@ Lucky for me, [Golang](https://golang.org/) was invented after my computer scien
 
 I discovered that all the rumors were true. It was a pleasure learning about Golang. The community is vast. There are a lot of easy-to-use hands-on tutorials. If you have never used Golang, you can get up to speed in no time for this project.
 
+As part of the assignment, I prepared a lecture about why I chose Golang and what I learned about Golang throughout the project. You can check out the [Google Slides](https://docs.google.com/presentation/d/1gjMG6qEgGlGHaYegMGpBffWGPgNJzWmvA0NxEtB8LJ8/edit?usp=sharing).
+
 ## What's the Deal
 
 This is a project to show a variety of encryption algorithms throughout history.
