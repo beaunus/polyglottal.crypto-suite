@@ -8,15 +8,20 @@ As part of Code Chrysalis's immersive course, students are given one week to wri
 
 Lucky for me, [Golang](https://golang.org/) was invented after my computer science course, and I had never used it prior to this assignment. I was especially attracted to Golang for the following reasons:
 
-* It has a reputation for being very fast to write, compile, and execute.
-* It was developed by rockstars.
-* It has all the great features of low-level languages, with the readability of modern high-level languages.
+- It has a reputation for being very fast to write, compile, and execute.
+- It was developed by rockstars.
+- It has all the great features of low-level languages, with the readability of modern high-level languages.
 
 I discovered that all the rumors were true. It was a pleasure learning about Golang. The community is vast. There are a lot of easy-to-use hands-on tutorials. If you have never used Golang, you can get up to speed in no time for this project.
 
 ## What's the Deal
 
 This is a project to show a variety of encryption algorithms throughout history.
+
+As of now, it includes the following algorithms:
+
+- [Ceasar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
+- [Scytale Cipher](https://en.wikipedia.org/wiki/Scytale)
 
 My intention is to include a vast amount of algorithms from https://en.wikipedia.org/wiki/History_of_cryptography.
 
