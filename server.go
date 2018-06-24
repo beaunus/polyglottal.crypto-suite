@@ -22,7 +22,7 @@ func noCache(next http.Handler) http.Handler {
 func main() {
 
 	router := mux.NewRouter()
-	router.Use(noCache)
+	// router.Use(noCache)
 	router.HandleFunc("/api/v1/caesar", ciphers.CaesarHandler).Methods("GET")
 	router.HandleFunc("/api/v1/scytale", ciphers.ScytaleHandler).Methods("GET")
 	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./public/")))
