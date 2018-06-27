@@ -1,4 +1,4 @@
-# <i>pretty</i> Sweet ¢®¥ÞƮø Suite
+# <i style="color: rgb(184, 73, 169)">pretty</i> Sweet ¢®¥ÞƮø Suite
 
 This project was created while I was a student at [Code Chrysalis](https://www.codechrysalis.io/).
 
