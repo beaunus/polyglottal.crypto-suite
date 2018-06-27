@@ -46,7 +46,6 @@ const scytaleDecrypt = async () => {
 };
 
 document.getElementById("scytale-decrypt-button").onclick = async () => {
-  console.log("hello");
   const response = await scytaleDecrypt();
   showResult(response.data, scytaleDecryptHandler);
 };
