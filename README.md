@@ -38,11 +38,14 @@ go get github.com/oxequa/realize
 # Get the project run tools together
 go get ./...
 
-# Develop the code with hot reloading
+# Develop the code with hot reloading [env.PORT || 8000]
 realize start --name="server" --run
 
 # Run all tests [including benchmarks]
 go test [-benchmem -bench .] ./...
+
+# Run the server on port [env.PORT || 8000]
+go run server
 ```
 
 ## Contributing
