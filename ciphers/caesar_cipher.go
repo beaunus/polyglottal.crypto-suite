@@ -31,6 +31,7 @@ func CaesarHandler(w http.ResponseWriter, r *http.Request) {
 
 // CaesarEncrypt depends on the alphabet.
 func CaesarEncrypt(plaintext, alphabet string, shift int) string {
+	shift = shift % len(alphabet)
 	for shift < 0 {
 		shift += len(alphabet)
 	}
