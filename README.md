@@ -29,10 +29,15 @@ My intention is to include a vast amount of algorithms from https://en.wikipedia
 
 You can see this project in action at https://pretty-sweet-crypto-suite.herokuapp.com/.
 
-## Scripts
+## Getting Started
+
+If you'd like to get this thing running, fork and/or clone the code onto your local machine and run the following scripts.
+
+### Scripts
 
 ```bash
 # Get dev tools together
+# This allows hot reloading
 go get github.com/oxequa/realize
 
 # Get the project run tools together
